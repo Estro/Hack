@@ -7,7 +7,10 @@ var app = http.createServer(function(req, res) {
 
 var io = require('socket.io').listen(app);
 io.sockets.on('connection', function(socket) {
-
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+});
 
     socket.on('message', function(message) {
         socket.broadcast.emit('message', message);
@@ -31,6 +34,7 @@ io.sockets.on('connection', function(socket) {
         } else {
             socket.emit('full', room);
         }
+
         socket.emit('emit(): client ' + socket.id + ' joined room ' + room);
         socket.broadcast.emit('broadcast(): client ' + socket.id + ' joined room ' + room);
 

@@ -203,7 +203,7 @@ function handleUserMedia(stream) {
     localVideoStream = stream;
     sendMessage('Got user media');
     $('#localimg').hide();
-    $('#localVideo').show();
+    //$('#localVideo').show();
     $('.selection').hide();
     $('.player').show();
     if (isInitiator) {
