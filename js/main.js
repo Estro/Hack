@@ -1,5 +1,5 @@
 'use strict';
-$('#remoteVideo').hide();
+
 $('#localVideo').hide();
 
 var localuser;
@@ -86,9 +86,11 @@ function createConnection() {
     }
     $('.navbar-toggle').trigger('click');
     localuser = Math.random().toString(36).substring(7);
+
     if (room !== '') {
         socket.emit('create or join', room);
     }
+
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
     if (navigator.mozGetUserMedia) {
@@ -96,31 +98,6 @@ function createConnection() {
     }
 }
 
-socket.on('chat', function(message) {
-    console.log(message);
-    $('#chat').append("<span style='color:red;padding-left: 5px;'>" + message.user + "</spna>: " + message.msg + "</br>");
-});
-
-$('#msg').keypress(function(e) { // text written
-
-
-    if (e.keyCode === 13) {
-        if (user === '') {
-            alert('Join Room First');
-            return false;
-        }
-        if ($('#msg').val() === '')
-            return false;
-        var msg = $('#msg').val();
-        var msgob = {
-            'user': localuser,
-            'msg': msg
-        };
-        socket.emit('chat', msgob);
-        $('#chat').append("<span style='color:green;padding-left: 5px;'>Me</spna>: " + msgob.msg + "</br>");
-        $('#msg').val('');
-    }
-});
 
 socket.on('created', function(room) {
     console.log('Created room ' + room);
@@ -130,8 +107,6 @@ socket.on('created', function(room) {
 socket.on('full', function(room) {
     console.log('Room' + room + " is full.");
 });
-
-
 
 socket.on('join', function(room) {
     console.log('Another peer made a request to join room ' + room);
