@@ -73,7 +73,7 @@ var constraints = {
 
 function createConnection() {
     if (user === '') {
-        user = 'Martin';
+        user = Math.random().toString(36).substring(7);
     }
 
     if (room === '') {
@@ -85,7 +85,7 @@ function createConnection() {
         return false;
     }
     $('.navbar-toggle').trigger('click');
-    localuser = 'Martin';
+    localuser = Math.random().toString(36).substring(7);
     if (room !== '') {
         socket.emit('create or join', room);
     }
