@@ -1,95 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Video chat using socket.io" content="">
-    <meta name="author" content="Hiren Kavad">
-  
-    <script src="//api.turnservers.com/api.js?key=Here You API KEY"></script>
-
-    <!-- Obtain FREE TURN SERVER AND API KEY From Turnservers.com -->
-
-    <title>Video Chat By Hiren Kavad</title>
-
-    <!-- Bootstrap core CSS -->
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-      <link href="css/custom.css" rel="stylesheet">
-
-  
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Video Chat</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" >
-            <div class="form-group">
-              <input type="text" name="userId" id="userId" placeholder="User" class="form-control">
-            </div>
-            <div class="form-group">
-             <input type="text" name="roomId" id="roomId" placeholder="Room" class="form-control">
-            </div>
-           <input tupe="button" id="startButton" class="btn btn-success" value="Join"/>
-          </form>
-        </div>
-      </div>
-    </div>
-<div class="jumbotron">
- <div class="row ">
-         
-          
-          <div class="col-md-8" >
-            <div class="row">
-              <img src="images/remote.png" id="remoteimg" class="img-responsive"/>  
-              <video id='remoteVideo' autoplay width="100%" class="remote"></video>
-            </div>
-          </div>
-          <div class="col-md-4 local" > 
-            <div class="row">           
-               <img src="images/local.png" id="localimg" class="img-responsive"/>           
-               <video id='localVideo' autoplay muted width="100%" ></video>
-            </div>
-            <div class="row">
-             
-              <div id="chat" class="txtarea fullsz"></div>
-              <input type="text" id="msg" placeholder="Press enter to send message" class="fullsz form-control"/>          
-            </div>
-          </div>
-        </div>
-
-      <footer class="footer">        
-        <i class="fa fa-github"></i><a href="https://github.com/Hironate/PeerChat" target="_blank"> Fork Me on Github</a>
-      </footer>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ratchet template page</title>
+		<!-- Sets initial viewport load and disables zooming  -->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- Include the compiled Ratchet CSS -->
+		<link href="/css/ratchet.css" rel="stylesheet">
+		<link href="/css/ratchet-theme-ios.css" rel="stylesheet">
+		<link href="/css/custom.css" rel="stylesheet">
+		<!-- Include the compiled Ratchet JS -->
+		<script src="/js/ratchet.js"></script>
+	</head>
+	<body>
+		<!-- Make sure all your bars are the first things in your <body> -->
+		<header class="bar bar-nav tesco">
+			<a class="icon icon-left-nav pull-left exit player screen"></a>
+			<h1 class="title">Virtual Helper</h1>
+		</header>
+		<div class="player">
+			<div class="bar bar-standard bar-header-secondary">
+			<video id="remoteVideo" autoplay width="100%" class="remote"></video>
+		<video id="localVideo" autoplay width="100%" class="remote"></video>
+	</div>
 </div>
-
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-    <!-- Application Specific Javascripts -->
-    <script src='/socket.io/socket.io.js'></script>
-    <script src='js/main.js'></script>
-
-  </body>
+<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content">
+	<div class="content-padded selection screen tesco no-margin intro-block">
+		<img src="http://lorempixel.com/g/400/200/">
+		<h2>Welcome to your own virtual helper</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at velit posuere ligula tincidunt imperdiet sit amet in neque. Fusce sed tortor felis. Sed vitae libero vitae ligula faucibus vulputate. Morbi cursus risus felis, id venenatis felis mattis quis. </p>
+	</div>
+	<div class="content-padded selection screen">
+		<div class="card shift-up">
+			<div class="card-header">
+				<h2 class="font-blue">Select your options</h2>
+			</div>
+			<div class="card-content">
+				<select>
+					<option>Option One</option>
+					<option>Option One</option>
+					<option>Option One</option>
+				</select>
+				<select>
+					<option>Option One</option>
+					<option>Option One</option>
+					<option>Option One</option>
+				</select>
+				<button class="btn btn-primary btn-block" id="startButton">Connect</button>
+			</div>
+		</div>
+	</div>
+	<!-- Block button in standard bar fixed above the footer -->
+	<nav class="bar bar-tab">
+		<a class="tab-item" href="#">
+			<span class="icon icon-home"></span>
+			<span class="tab-label">Home</span>
+		</a>
+		<a class="tab-item" href="#">
+			<span class="icon icon-person"></span>
+			<span class="tab-label">Coupons</span>
+		</a>
+		<a class="tab-item active" href="#">
+			<span class="icon icon-star-filled"></span>
+			<span class="tab-label">Store Helper</span>
+		</a>
+		<a class="tab-item" href="#">
+			<span class="icon icon-search"></span>
+			<span class="tab-label">Profile</span>
+		</a>
+		<a class="tab-item" href="#">
+			<span class="icon icon-gear"></span>
+			<span class="tab-label">At the till</span>
+		</a>
+	</nav>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<!-- Application Specific Javascripts -->
+	<script src='/socket.io/socket.io.js'></script>
+	<script src='js/main.js'></script>
+</body>
 </html>
