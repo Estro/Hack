@@ -104,7 +104,7 @@
 
      socket.on('connected', function(message) {
          $('.loader').hide();
-         $('.desktop').attr('src', 'https://apprtc.appspot.com/r/Tesco' + message);
+         $('.desktop').attr('src', 'https://98fb662.ngrok.com/' + message);
      });
 
      socket.on('disconnected', function(message) {
