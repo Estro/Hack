@@ -8,7 +8,7 @@
          var time = new Date();
          room = 'myTesco' + time.getMilliseconds();
      }
-     $('.player iframe').attr('src', 'https://apprtc.appspot.com/r/Tesco' + room);
+     $('.player iframe').attr('src', 'http://98fb662.ngrok.com/Tesco' + room);
 
      TESCO.gotoScreen = function(screen) {
          $('.screen').hide();
