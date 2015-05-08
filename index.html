@@ -9,25 +9,23 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<!-- Include the compiled Ratchet CSS -->
-
 		<link href="https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:300italic,400,300,600,700" rel="stylesheet">
 		<link href="/css/ratchet.css" rel="stylesheet">
 		<link href="/css/custom.css?v=1" rel="stylesheet">
 		<!-- Include the compiled Ratchet JS -->
 		<script src="/js/ratchet.js"></script>
 	</head>
-	<body>
+	<body class="phone-screen">
 		<!-- Make sure all your bars are the first things in your <body> -->
-<!-- 		<header class="bar bar-nav tesco">
+		<!-- 		<header class="bar bar-nav tesco">
 			<a class="icon icon-left-nav pull-left exit player screen"></a>
-
 		</header> -->
 		<div class="player">
 			<div class="bar bar-standard bar-header-secondary">
 				<div class="user-message">New item added</div>
 				<iframe src="" class="phone"></iframe>
 			<!-- <video id="remoteVideo" autoplay width="100%" class="remote"></video>
-		    <video id="localVideo" style="display:none" width="100%" class="remote"></video> -->
+		<video id="localVideo" style="display:none" width="100%" class="remote"></video> -->
 	</div>
 </div>
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
@@ -35,7 +33,7 @@
 	<div class="content-padded selection screen tesco no-margin intro-block">
 		<img src="http://www.vemediaonline.com/wp-content/uploads/avatar-6.png" class="round-image">
 		<h2>Welcome to your own virtual helper</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at velit posuere ligula tincidunt imperdiet sit amet in neque. Fusce sed tortor felis. Sed vitae libero vitae ligula faucibus vulputate. Morbi cursus risus felis, id venenatis felis mattis quis. </p>
+		<p>Connect with your Tesco Guru and fire away.</p>
 	</div>
 	<div class="content-padded selection screen">
 		<div class="card shift-up">
@@ -44,54 +42,50 @@
 			</div>
 			<div class="card-content">
 				<select>
-					<option>Option One</option>
-					<option>Option One</option>
-					<option>Option One</option>
+					<option>Technical Support</option>
+					<option>Product Information</option>
+					<option>Suggustions & Ideas</option>
 				</select>
 				<select>
 					<option>Option One</option>
-					<option>Option One</option>
-					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
 				</select>
 				<button class="btn btn-primary btn-block" id="startButton">Connect</button>
 			</div>
 		</div>
 	</div>
-
 	<div class="content-padded helper screen no-margin intro-block settings-bar">
 		<button>Offers</button>
 		<button>Scan</button>
 		<button>Add</button>
 		<button class="callforhelp">Chat</button>
 	</div>
-
 	<div class="content-padded helper screen price-bar">
 		<span>Est. Total £5.77</span>
 		<span class="right">Ticked Total £0.00</span>
 	</div>
-
 	<div class="content-padded helper screen shopping-list">
 		<div class="list-item" data-id="0">
 			<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
 			<h2>Red Peppers</h2>
 			<h3>£1.50</h3>
-						<span>1</span>
+			<span>1</span>
 		</div>
-				<div class="list-item" data-id="1">
+		<div class="list-item" data-id="1">
 			<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
 			<h2>Red Peppers</h2>
 			<h3>£1.50</h3>
-						<span>1</span>
+			<span>1</span>
 		</div>
-				<div class="list-item" data-id="2">
+		<div class="list-item" data-id="2">
 			<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
 			<h2>Red Peppers</h2>
 			<h3>£1.50</h3>
 			<span>1</span>
 		</div>
 	</div>
-
-    <div class="content-padded home screen tesco no-margin intro-block">
+	<div class="content-padded home screen tesco no-margin intro-block">
 		<img src="/images/imgoimage.jpg" class="round-img">
 		<h2>We’re turning your points into good stuff!</h2>
 		<p>We’re processing your statement at the moment. Any points carried forward to your next statement will be added to your account soon. Check back soon.  </p>
@@ -107,7 +101,58 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="content-padded profile tesco no-margin intro-block screen">
+		<img src="/images/imgoimage.jpg" class="round-img">
+		<h2>Let us know your food preferences</h2>
+		<p>We'll use this information to make better suggestions and recommendations.</p>
+	</div>
+	<div class="content-padded profile screen">
+		<div class="card shift-up">
+			<div class="card-header">
+				<h2 class="font-blue">My Food Preferences</h2>
+			</div>
+			<div class="card-content">
+				<ul class="table-view">
+					<li class="table-view-cell">
+						Vegetarian
+						<div class="toggle" id="t1">
+							<div class="toggle-handle"></div>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						Nut - free
+						<div class="toggle active" id="t2">
+							<div class="toggle-handle"></div>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						Gluten - free
+						<div class="toggle" id="t3">
+							<div class="toggle-handle"></div>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						Lactose - free
+						<div class="toggle active" id="t4">
+							<div class="toggle-handle"></div>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						Low suger
+						<div class="toggle" id="t5">
+							<div class="toggle-handle"></div>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						Low Fat
+						<div class="toggle" id="t6">
+							<div class="toggle-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<!-- Block button in standard bar fixed above the footer -->
 	<nav class="bar bar-tab">
 		<a class="tab-item active" href="#">
@@ -133,7 +178,6 @@
 	</nav>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
 	<script src='/socket.io/socket.io.js'></script>
 	<!-- Application Specific Javascripts -->
 	<script src='js/main.js?v=2'></script>

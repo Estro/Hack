@@ -21,8 +21,11 @@ io.sockets.on('connection', function(socket) {
     });
 
     socket.on('deleteitem', function(message) {
-    	console.log('======');
         socket.broadcast.emit('deleteitem', message);
+    });
+
+      socket.on('toggle', function(message) {
+        socket.broadcast.emit('toggle', message);
     });
 
 });

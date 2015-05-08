@@ -29,6 +29,7 @@
 
          $('.tab-item').click(function() {
              socket.emit('disconnected');
+         	 //$('.phone-screen .player').hide();
              $('.tab-item').removeClass('active');
              $(this).addClass('active');
              if ($(this).text().trim() === 'Home') {
@@ -38,10 +39,20 @@
              if ($(this).text().trim() === 'Store Helper') {
                  TESCO.gotoScreen('helper');
              }
+
+             if ($(this).text().trim() === 'Profile') {
+                 TESCO.gotoScreen('profile');
+             }
          });
 
          $('.callforhelp').click(function() {
              TESCO.gotoScreen('selection');
+         });
+
+         $('.toggle').click(function() {
+             $(this).toggleClass('active');
+             var id = $(this).attr('id');
+             socket.emit('toggle', id);
          });
 
          $('#send-btn').click(function() {
@@ -69,6 +80,10 @@
              if (tab === 'System Links') {
                  $('.tab-content.three').show();
              }
+
+             if (tab === 'Profile') {
+                 $('.tab-content.one').show();
+             }
          });
      };
      var socket = io.connect();
@@ -92,6 +107,14 @@
      socket.on('disconnected', function(message) {
          $('.loader').show();
          $('.desktop').attr('src', '');
+     });
+
+     socket.on('toggle', function(message) {
+     	$('#' + message).toggleClass('active');
+        $('.user-message').text('Profile Setting changed').fadeIn();
+             setTimeout(function() {
+                 $('.user-message').fadeOut();
+             }, 5000);
      });
 
      socket.on('deleteitem', function(message) {
