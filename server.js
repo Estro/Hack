@@ -14,7 +14,7 @@ io.sockets.on('connection', function(socket) {
     });
 
     socket.on('connected', function(message) {
-        socket.broadcast.emit('connected');
+        socket.broadcast.emit('connected', message);
 
     });
 
