@@ -29,7 +29,7 @@
 
          $('.tab-item').click(function() {
              socket.emit('disconnected');
-         	 //$('.phone-screen .player').hide();
+             //$('.phone-screen .player').hide();
              $('.tab-item').removeClass('active');
              $(this).addClass('active');
              if ($(this).text().trim() === 'Home') {
@@ -58,7 +58,9 @@
          $('#send-btn').click(function() {
              var text = $('#sender').val();
              $('#sender').val('');
-             $('.shopping-list.admin').append('<div class="list-item" data-id="' + counter + '"><img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg"><h2>New Item</h2><h3>£1.50</h3><span class="red">Remove</span></div>');
+              var item = items[itemCounter];
+             $('.shopping-list').append('<div class="list-item" data-id="' + counter + '"><img src="' + item.image + '"><h2>' + item.Product + '</h2><h3>' + item.Price + '</h3><span class="red">Remove</span></div>');
+             itemCounter++;
              socket.emit('message', text);
              counter++;
          });
@@ -90,8 +92,9 @@
 
      socket.on('message', function(message) {
          $('.user-message').text(message).fadeIn();
-         $('.shopping-list').append('<div class="list-item" data-id="' + counter + '"><img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg"><h2>New Item</h2><h3>£1.50</h3><span>1</span></div>');
-
+         var item = items[itemCounter];
+         $('.shopping-list').append('<div class="list-item" data-id="' + counter + '"><img src="' + item.image + '"><h2>' + item.Product + '</h2><h3>' + item.Price + '</h3><span>'+item.Quantity +'</span></div>');
+         itemCounter++;
          setTimeout(function() {
              $('.user-message').fadeOut();
          }, 5000);
@@ -110,11 +113,11 @@
      });
 
      socket.on('toggle', function(message) {
-     	$('#' + message).toggleClass('active');
-        $('.user-message').text('Profile Setting changed').fadeIn();
-             setTimeout(function() {
-                 $('.user-message').fadeOut();
-             }, 5000);
+         $('#' + message).toggleClass('active');
+         $('.user-message').text('Profile Setting changed').fadeIn();
+         setTimeout(function() {
+             $('.user-message').fadeOut();
+         }, 5000);
      });
 
      socket.on('deleteitem', function(message) {
@@ -129,5 +132,37 @@
      TESCO.events();
      $('.home').show();
      $('.desktop').height($(window).height() - 50);
+
+     var itemCounter = 0;
+
+     var items = [{
+         "Product ID": 272260396,
+         "Product": "Lactofree Hard Cheese 200G",
+         "Quantity": 1,
+         "Price": "�1.79",
+         "Location": "Aisle 31, Right, Mod 15, Shelf A",
+         "image": "/images/272260396.jpg"
+     }, {
+         "Product ID": 285212132,
+         "Product": "Tesco Cherry Tomatoes 330G",
+         "Quantity": 1,
+         "Price": "£0.90",
+         "Location": "Aisle 5, Right, Mod 11, Shelf F",
+         "image": "/images/285212132.jpg"
+     }, {
+         "Product ID": 254656543,
+         "Product": "Tesco British Semi Skimmed Milk 2.272Ltr/4Pints",
+         "Quantity": 1,
+         "Price": "£1.00",
+         "Location": "Aisle 1, Left, Mod 20, Shelf D",
+         "image": "/images/254656543.jpg"
+     }, {
+         "Product ID": 258877943,
+         "Product": "Lactofree Fresh Semi Skimmed Milk 1L",
+         "Quantity": 1,
+         "Price": "£1.35",
+         "Location": "Aisle 6, Right, Mod 10, Shelf D",
+         "image": "/images/258877943.jpg"
+     }];
 
  })(window.TESCO = window.TESCO || {});

@@ -307,12 +307,15 @@ width: 134px;
 }
 
 .list-item img {
-	  width: 70px;
-	  float:left;
+	   width: 70px;
+  float: left;
+  margin-right: 15px;
+  border-radius: 50%;
 }
 
 .list-item h2 {
 	  color:#4097F3;
+	  width:90%;
 
 }
 
