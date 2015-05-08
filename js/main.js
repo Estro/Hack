@@ -2,6 +2,11 @@
      "use strict";
 
      var room = Math.random().toString(36).substring(7);
+
+     if(room === null){
+     	var time = new Date();
+     	room = 'myTesco' + time.getMilliseconds();
+     }
      $('.player iframe').attr('src', 'https://apprtc.appspot.com/r/Tesco' + room);
 
      TESCO.gotoScreen = function(screen) {
