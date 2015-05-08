@@ -9,28 +9,31 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<!-- Include the compiled Ratchet CSS -->
+
+		<link href="https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:300italic,400,300,600,700" rel="stylesheet">
 		<link href="/css/ratchet.css" rel="stylesheet">
-		<link href="/css/ratchet-theme-ios.css" rel="stylesheet">
 		<link href="/css/custom.css?v=1" rel="stylesheet">
 		<!-- Include the compiled Ratchet JS -->
 		<script src="/js/ratchet.js"></script>
 	</head>
 	<body>
 		<!-- Make sure all your bars are the first things in your <body> -->
-		<header class="bar bar-nav tesco">
+<!-- 		<header class="bar bar-nav tesco">
 			<a class="icon icon-left-nav pull-left exit player screen"></a>
-			<h1 class="title">Virtual Helper</h1>
-		</header>
+
+		</header> -->
 		<div class="player">
 			<div class="bar bar-standard bar-header-secondary">
-			<video id="remoteVideo" autoplay width="100%" class="remote"></video>
-		    <video id="localVideo" style="display:none" width="100%" class="remote"></video>
+				<div class="user-message">New item added</div>
+				<iframe src="https://apprtc.appspot.com/r/760532657" class="phone"></iframe>
+			<!-- <video id="remoteVideo" autoplay width="100%" class="remote"></video>
+		    <video id="localVideo" style="display:none" width="100%" class="remote"></video> -->
 	</div>
 </div>
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
 	<div class="content-padded selection screen tesco no-margin intro-block">
-		<img src="http://lorempixel.com/g/400/200/">
+		<img src="http://www.vemediaonline.com/wp-content/uploads/avatar-6.png" class="round-image">
 		<h2>Welcome to your own virtual helper</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at velit posuere ligula tincidunt imperdiet sit amet in neque. Fusce sed tortor felis. Sed vitae libero vitae ligula faucibus vulputate. Morbi cursus risus felis, id venenatis felis mattis quis. </p>
 	</div>
@@ -54,17 +57,68 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="content-padded helper screen no-margin intro-block settings-bar">
+		<button>Offers</button>
+		<button>Scan</button>
+		<button>Add</button>
+		<button class="callforhelp">Chat</button>
+	</div>
+
+	<div class="content-padded helper screen price-bar">
+		<span>Est. Total £5.77</span>
+		<span class="right">Ticked Total £0.00</span>
+	</div>
+
+	<div class="content-padded helper screen shopping-list">
+		<div class="list-item">
+			<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
+			<h2>Red Peppers</h2>
+			<h3>£1.50</h3>
+						<span>1</span>
+		</div>
+				<div class="list-item">
+			<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
+			<h2>Red Peppers</h2>
+			<h3>£1.50</h3>
+						<span>1</span>
+		</div>
+				<div class="list-item">
+			<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
+			<h2>Red Peppers</h2>
+			<h3>£1.50</h3>
+			<span>1</span>
+		</div>
+	</div>
+
+    <div class="content-padded home screen tesco no-margin intro-block">
+		<img src="/images/imgoimage.jpg" class="round-img">
+		<h2>We’re turning your points into good stuff!</h2>
+		<p>We’re processing your statement at the moment. Any points carried forward to your next statement will be added to your account soon. Check back soon.  </p>
+	</div>
+	<div class="content-padded home screen">
+		<div class="card shift-up">
+			<div class="card-header">
+				<h2 class="font-blue">My Coupons</h2>
+			</div>
+			<div class="card-content">
+				<img src="/images/imgoimage2.jpg" class="home-image">
+				<p>3 of your 9 used so far</p>
+			</div>
+		</div>
+	</div>
+
 	<!-- Block button in standard bar fixed above the footer -->
 	<nav class="bar bar-tab">
-		<a class="tab-item" href="#">
-			<span class="icon icon-home"></span>
+		<a class="tab-item active" href="#">
+			<span class="icon icon-home exit"></span>
 			<span class="tab-label">Home</span>
 		</a>
 		<a class="tab-item" href="#">
 			<span class="icon icon-person"></span>
 			<span class="tab-label">Coupons</span>
 		</a>
-		<a class="tab-item active" href="#">
+		<a class="tab-item" href="#">
 			<span class="icon icon-star-filled"></span>
 			<span class="tab-label">Store Helper</span>
 		</a>
@@ -80,8 +134,9 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<!-- Application Specific Javascripts -->
+
 	<script src='/socket.io/socket.io.js'></script>
+	<!-- Application Specific Javascripts -->
 	<script src='js/main.js?v=1'></script>
 </body>
 </html>

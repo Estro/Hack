@@ -2,73 +2,122 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Ratchet template page</title>
+		<title>My Tesco Friend</title>
 		<!-- Sets initial viewport load and disables zooming  -->
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 		<!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<!-- Include the compiled Ratchet CSS -->
-		<link href="/css/ratchet.css" rel="stylesheet">
-		<link href="/css/ratchet-theme-ios.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link href="/css/custom.css?v=1" rel="stylesheet">
 		<!-- Include the compiled Ratchet JS -->
 		<script src="/js/ratchet.js"></script>
 	</head>
-	<body>
-		<!-- Make sure all your bars are the first things in your <body> -->
-		<header class="bar bar-nav">
-			<h1 class="title">Ratchet</h1>
-		</header>
-		<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-		<div class="content">
-			<div class="content-padded selection">
-				<select>
-					<option>Option One</option>
-					<option>Option One</option>
-					<option>Option One</option>
-				</select>
-				<select>
-					<option>Option One</option>
-					<option>Option One</option>
-					<option>Option One</option>
-				</select>
-				<button class="btn btn-primary btn-block">Connect</button>
+	<body id="page-top" class="index header-padding admin">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<span class="navbar-brand" href="#page-top">My Tesco Friend</span>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				</div>
+				<!-- /.navbar-collapse -->
 			</div>
-			<div class="content-padded player">
-				<select>
-					<option>Option One</option>
-					<option>Option One</option>
-					<option>Option One</option>
-				</select>
-				<select>
-					<option>Option One</option>
-					<option>Option One</option>
-					<option>Option One</option>
-				</select>
-				<button class="btn btn-primary btn-block">Connect</button>
-			</div>
-		</div>
-		<nav class="bar bar-tab">
-			<a class="tab-item" href="#">
-				<span class="icon icon-home"></span>
-				<span class="tab-label">Home</span>
-			</a>
-			<a class="tab-item" href="#">
-				<span class="icon icon-person"></span>
-				<span class="tab-label">Coupons</span>
-			</a>
-			<a class="tab-item active" href="#">
-				<span class="icon icon-star-filled"></span>
-				<span class="tab-label">Store Helper</span>
-			</a>
-			<a class="tab-item" href="#">
-				<span class="icon icon-search"></span>
-				<span class="tab-label">Profile</span>
-			</a>
-			<a class="tab-item" href="#">
-				<span class="icon icon-gear"></span>
-				<span class="tab-label">At the till</span>
-			</a>
+			<!-- /.container-fluid -->
 		</nav>
+		<section class="info">
+												<div class="loader"><img src="http://deepakkit.xtgem.com/files/loading.gifjsessionidURgz41CHGWcq8M1BI6qdZQ.gif"><h2>Waiting for Customers</h2></div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 no-right">
+						<iframe src="https://apprtc.appspot.com/r/760532657" class="desktop"></iframe>
+					</div>
+					<div class="col-md-6 min-margin">
+						<div class="customers">
+							<p>You are talking to:</p>
+							<h1>Mr Andrew Smith</h1>
+							<p>Who is visiting the store</p>
+							<h2>Dundee Extra (2222)</h2>
+							<!--             		<div class="section">
+								<h2>Leanne's Allergies</h2>
+								<ul class="allergies">
+											<li>Milk</li>
+											<li>cheese</li>
+											<li>Nuts</li>
+								</ul>
+							</div> -->
+						</div>
+						<div class="tabs">
+							<ul>
+								<li class="active">Profile</li>
+								<li>Shopping List</li>
+								<li>System Links</li>
+							</ul>
+						</div>
+						<div class="tab-content one">
+
+						</div>
+						<div class="tab-content two">
+							<input type="text" id="sender">
+							<button id="send-btn" class="btn btn-success">Add</button>
+						</div>
+						<div class="tab-content two">
+							<div class="content-padded shopping-admin shopping-list">
+								<div class="list-item">
+									<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
+									<h2>Red Peppers</h2>
+									<h3>£1.50</h3>
+									<span>1</span>
+								</div>
+								<div class="list-item">
+									<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
+									<h2>Red Peppers</h2>
+									<h3>£1.50</h3>
+									<span>1</span>
+								</div>
+								<div class="list-item">
+									<img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg">
+									<h2>Red Peppers</h2>
+									<h3>£1.50</h3>
+									<span>1</span>
+								</div>
+							</div>
+						</div>
+						<div class="tab-content three">
+							<ul>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+								<li><a href="#">Store Reception</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<!-- Application Specific Javascripts -->
+		<script src='js/main.js?v=1'></script>
 	</body>
 </html>
