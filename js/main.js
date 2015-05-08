@@ -8,7 +8,7 @@
          var time = new Date();
          room = 'myTesco' + time.getMilliseconds();
      }
-     $('.player iframe').attr('src', 'https://98fb662.ngrok.com/' + room);
+     $('.player iframe').attr('src', 'https://98fb662.ngrok.com/r/' + room);
 
      TESCO.gotoScreen = function(screen) {
          $('.screen').hide();
@@ -104,7 +104,7 @@
 
      socket.on('connected', function(message) {
          $('.loader').hide();
-         $('.desktop').attr('src', 'https://98fb662.ngrok.com/' + message);
+         $('.desktop').attr('src', 'https://98fb662.ngrok.com/r/' + message);
      });
 
      socket.on('disconnected', function(message) {
