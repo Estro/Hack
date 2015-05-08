@@ -1,7 +1,7 @@
  (function(TESCO) {
      "use strict";
 
-     var room = Math.floor(Math.random()*11);
+     var room = Math.random().toString(36).substring(7);
      $('.player iframe').attr('src', 'https://apprtc.appspot.com/r/Tesco'+ room);
 
      TESCO.gotoScreen = function(screen) {
