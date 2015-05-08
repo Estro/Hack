@@ -355,7 +355,7 @@ width: 134px;
 }
 
 #sender{
-	width: 82%;
+  width: 82%;
   margin-left: 21px;
   margin-top: 10px;
   margin-bottom: 12px;
@@ -396,4 +396,9 @@ width: 134px;
 .loader h2{
 	  display: inline-block;
   	  margin-left: 12px;
+}
+
+
+.red{
+	cursor: pointer;
 }

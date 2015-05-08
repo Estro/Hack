@@ -2,9 +2,9 @@
      "use strict";
 
      var room = Math.random().toString(36).substring(7);
-     var counter = 4;
+     var counter = 3;
 
-     if (room === null) {
+     if (room === null || room === undefined || room === "undefined") {
          var time = new Date();
          room = 'myTesco' + time.getMilliseconds();
      }
@@ -46,20 +46,21 @@
 
          $('#send-btn').click(function() {
              var text = $('#sender').val();
-
-             console.log('sendings');
              $('#sender').val('');
              $('.shopping-list.admin').append('<div class="list-item" data-id="' + counter + '"><img src="http://www.americansweets.co.uk/ekmps/shops/statesidecandy/images/walkers-prawn-cocktail-flavour-crisps-case-of-48-x-32.5g-bags-6107-p.jpg"><h2>New Item</h2><h3>£1.50</h3><span class="red">Remove</span></div>');
              socket.emit('message', text);
-             count++;
+             counter++;
          });
 
-         $('.red').click(function() {
-         	socket.emit('delete', $(this).parent().attr('data-id'));
+         $('.shopping-list.admin').on('click', '.red', function() {
+             socket.emit('deleteitem', $(this).parent().attr('data-id'));
+             $('.list-item[data-id="' + $(this).parent().attr('data-id') + '"]').remove();
          });
 
          $('.tabs li').click(function() {
              $('.tab-content').hide();
+             $('.tabs li').removeClass('active');
+             $(this).addClass('active');
              var tab = $(this).text().trim();
              if (tab === 'Shopping List') {
                  $('.tab-content.two').show();
@@ -84,7 +85,6 @@
 
 
      socket.on('connected', function(message) {
-         console.log('received');
          $('.loader').hide();
          $('.desktop').attr('src', 'https://apprtc.appspot.com/r/Tesco' + message);
      });
@@ -94,8 +94,13 @@
          $('.desktop').attr('src', '');
      });
 
-     socket.on('delete', function(message) {
-         $('.list-item[data-id="' + parseInt(message) + '"]').remove();
+     socket.on('deleteitem', function(message) {
+         $('.list-item[data-id="' + message + '"]').remove();
+         $('.user-message').text('Item removed from basket').fadeIn();
+
+         setTimeout(function() {
+             $('.user-message').fadeOut();
+         }, 5000);
      });
 
      TESCO.events();

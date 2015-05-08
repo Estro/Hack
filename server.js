@@ -10,7 +10,6 @@ io.sockets.on('connection', function(socket) {
 
     socket.on('message', function(message) {
         socket.broadcast.emit('message', message);
-        console.log(message);
     });
 
     socket.on('connected', function(message) {
@@ -21,8 +20,9 @@ io.sockets.on('connection', function(socket) {
         socket.broadcast.emit('disconnected');
     });
 
-    socket.on('delete', function(message) {
-        socket.broadcast.emit('delete', message);
+    socket.on('deleteitem', function(message) {
+    	console.log('======');
+        socket.broadcast.emit('deleteitem', message);
     });
 
 });
