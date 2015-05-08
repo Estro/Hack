@@ -74,7 +74,7 @@
      socket.on('connected', function(message) {
      	console.log('received');
         $('.loader').hide();
-
+ 		$('.player iframe').attr('src', 'https://apprtc.appspot.com/r/Tesco'+ room);
      });
 
      TESCO.events();
