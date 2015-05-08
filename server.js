@@ -15,7 +15,14 @@ io.sockets.on('connection', function(socket) {
 
     socket.on('connected', function(message) {
         socket.broadcast.emit('connected', message);
+    });
 
+    socket.on('disconnected', function(message) {
+        socket.broadcast.emit('disconnected');
+    });
+
+    socket.on('delete', function(message) {
+        socket.broadcast.emit('delete', message);
     });
 
 });
