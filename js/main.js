@@ -1,6 +1,9 @@
  (function(TESCO) {
      "use strict";
 
+     var room = Math.floor(Math.random()*11);
+     $('.player iframe').attr('src', 'https://apprtc.appspot.com/r/Tesco'+ room);
+
      TESCO.gotoScreen = function(screen) {
          $('.screen').hide();
          $('.' + screen).show();
@@ -15,7 +18,7 @@
          $('#startButton').click(function() {
              $('.selection').hide();
              $('.player').show();
-              socket.emit('connected');
+              socket.emit('connected', room);
          });
 
          $('.tab-item').click(function() {
